@@ -16,15 +16,18 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Ricardo.Bravo
+ * @author USUARIO
  */
 @Entity
 @Table(catalog = "androidp", schema = "public")
-@XmlRootElement
+@XmlRootElement(name = "usuario")
+@XmlAccessorType(XmlAccessType.FIELD)
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")})
 public class Usuario implements Serializable {
@@ -106,5 +109,5 @@ public class Usuario implements Serializable {
     public String toString() {
         return "modelo.Usuario[ id=" + id + " ]";
     }
-    
+
 }

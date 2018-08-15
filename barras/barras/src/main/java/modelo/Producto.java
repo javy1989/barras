@@ -6,12 +6,14 @@
 package modelo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -20,11 +22,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Ricardo.Bravo
+ * @author USUARIO
  */
 @Entity
 @Table(catalog = "androidp", schema = "public")
-@XmlRootElement
+@XmlRootElement(name = "producto")
 @NamedQueries({
     @NamedQuery(name = "Producto.findAll", query = "SELECT p FROM Producto p")})
 public class Producto implements Serializable {
@@ -38,12 +40,13 @@ public class Producto implements Serializable {
     @Size(max = 2147483647)
     @Column(length = 2147483647)
     private String nombre;
+    private BigDecimal precio;
     @Size(max = 2147483647)
     @Column(length = 2147483647)
     private String barras;
-    @Size(max = 2147483647)
-    @Column(length = 2147483647)
-    private String foto;
+    @Lob
+    private byte[] foto;
+    private Integer cantidad;
 
     public Producto() {
     }
@@ -68,6 +71,14 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
 
+    public BigDecimal getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
+    }
+
     public String getBarras() {
         return barras;
     }
@@ -76,12 +87,20 @@ public class Producto implements Serializable {
         this.barras = barras;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
     }
 
     @Override

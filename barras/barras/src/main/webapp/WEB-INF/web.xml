@@ -9,9 +9,17 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>Files</servlet-name>
+        <servlet-class>srvlet.Files</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Files</servlet-name>
+        <url-pattern>/files/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -30,7 +38,6 @@
         </init-param>
         <async-supported>true</async-supported>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>jersey-serlvet</servlet-name>
         <url-pattern>/api/*</url-pattern>

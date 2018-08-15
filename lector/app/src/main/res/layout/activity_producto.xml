@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".ProductoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp">
+
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="200dp">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:text="Nombre:" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:ems="10"
+                    android:text="Precio:" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:text="Codigo Barras:" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:text="Cantidad:" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="276dp"
+            android:layout_height="200dp">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editTextNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/editTextPrecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <EditText
+                    android:id="@+id/editTextCodigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:editable="false"/>
+
+                <EditText
+                    android:id="@+id/editTextCantidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number" />
+
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewProducto"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_weight="9" />
+
+    <Button
+        android:id="@+id/btnCamara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPedidos"
+        android:text="Tomar Foto"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPedidos"
+        android:onClick="scan"
+        android:text="Scan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPedidos"
+        android:onClick="ingresar"
+        android:text="Guardar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorWhite" />
+
+</LinearLayout>
